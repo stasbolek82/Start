@@ -1,26 +1,29 @@
 package baloon;
 
-import java.util.Random;
-
 public class Runner {
         public static void main(String[] args) {
 
-        Donkey donkey = new Donkey("Don",100);
+        Donkey1 donkey1 = new Donkey1("Don",1);
+        Balloon1 balloon1 = new Balloon1();
 
-        Random rand = new Random();
-        double min =  0.005;
-        double max =  0.007;
 
-                double a = Math.random()*(max-min+1)+min;
-                double rand_weight = 0.001*rand.nextDouble();
+        /* Tutaj jest zlokalizowany runner dla klas Balloon1 i Donkey1  */
 
-        if ((rand_weight >= 0.005) && (rand_weight<= 0.009)){
+        while (!donkey1.isFlying1(donkey1.getWeight1())) {
+                balloon1.addBalloon();
 
-        System.out.println("I can fly!"+ a);}
-        else {
-
-                System.out.println("I can fly! ---- " + rand_weight);
+                System.out.println("I can fly!"+ balloon1.getTotalWeight());
         }
+
+        /* Tutaj jest zlokalizowany runner dla klas Balloon2 i Donkey2   */
+                Donkey2 donkey2 = new Donkey2(1);
+
+                while (!donkey2.isFlying())
+                        donkey2.addBalloon(new Balloon2());
+
+                System.out.println("Ja latam!!!");
+                System.out.println(donkey2.getBalloons().length);
+
 
     }
 }
