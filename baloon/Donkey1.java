@@ -8,7 +8,8 @@ public class Donkey1 {
         this.name = name;
 
     }
-    public void isFlying1() {
-        }
+    public boolean isFlying1() {
+        return false;
+    }
 
 }

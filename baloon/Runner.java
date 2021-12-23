@@ -9,18 +9,22 @@ public class Runner {
 
         /* Tutaj jest zlokalizowany runner dla klas Balloon1 i Donkey1  */
 
-        while (!donkey1.isFlying1(donkey1.getWeight1())) {
+        while (!donkey1.isFlying1()) {
                 balloon1.addBalloon();
-
-                System.out.println("I can fly!"+ balloon1.getTotalWeight());
+                if (!(balloon1.getTotalWeight() <= 1.0)) {
+                        break;
+                }
+//                System.out.println("I can fly!" + balloon1.getTotalWeight());
         }
-
-        /* Tutaj jest zlokalizowany runner dla klas Balloon2 i Donkey2   */
+                System.out.println("I can fly! My weight is less than " + balloon1.getTotalWeight()+ " with " + balloon1.getNumber() + " balloons.");
+                /* Tutaj jest zlokalizowany runner dla klas Balloon2 i Donkey2   */
                 Donkey2 donkey2 = new Donkey2(1);
 
                 while (!donkey2.isFlying())
                         donkey2.addBalloon(new Balloon2());
 
+
+                System.out.println("==============================================================");
                 System.out.println("Ja latam!!!");
                 System.out.println(donkey2.getBalloons().length);
 

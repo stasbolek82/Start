@@ -25,6 +25,10 @@ public class Balloon1 {
             sum += balloons[i];
         return sum;
     }
+
+    public int getNumber(){
+        return this.number;
+    }
 //Opcja z domyślnym konstruktorem :
 
 
